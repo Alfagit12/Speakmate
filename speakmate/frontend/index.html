@@ -9,11 +9,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-  <!-- Top bar -->
+  <!-- Topbar -->
   <header class="topbar">
     <div class="container row-between">
       <div class="row-center gap-12">
-        <img src="logo.png" alt="SpeakMate" class="logo" />
+        <img src="/logo.png" alt="SpeakMate" class="logo">
         <span class="brand">SpeakMate</span>
       </div>
       <nav class="nav">
@@ -24,11 +24,22 @@
         <a href="#admin" class="nav-link">Admin</a>
         <a href="#pricing" class="nav-link cta">Upgrade</a>
       </nav>
-      <div class="row-center gap-8">
-        <button id="langToggle" class="btn ghost">UZ</button>
-      </div>
+      <button id="langToggle" class="btn ghost">UZ</button>
     </div>
   </header>
+
+  <!-- Landing splash -->
+  <section id="landing" class="page active">
+    <div class="hero">
+      <h1 class="hero-title">SpeakMate</h1>
+      <p class="hero-sub">AI bilan ingliz speaking mashqlari</p>
+      <button id="btnEnter" class="btn big accent">Boshlash</button>
+    </div>
+    <div id="loadingOverlay" class="loading hidden">
+      <div class="spinner"></div>
+      <div class="loading-text">Yuklanmoqda...</div>
+    </div>
+  </section>
 
   <!-- Layout -->
   <div class="container layout">
@@ -39,7 +50,7 @@
       </div>
       <div class="card">
         <h3 class="card-title i18n" data-i18n="weekly">Haftalik turnir</h3>
-        <div id="tournament" class="banner">
+        <div class="banner">
           <div class="banner-title i18n" data-i18n="weekStatus">Turnir 02:13:45 dan so‘ng tugaydi</div>
           <div class="banner-sub i18n" data-i18n="joinNow">Ishtirok eting va XP to‘plang!</div>
         </div>
@@ -52,16 +63,14 @@
 
     <main class="content">
       <!-- Dashboard -->
-      <section id="dashboard" class="page active">
+      <section id="dashboard" class="page">
         <div class="grid two">
           <div class="card">
             <h2 class="card-title i18n" data-i18n="overview">Umumiy ko‘rinish</h2>
             <div class="row-between">
               <div class="progress-wrap">
                 <div class="progress-label i18n" data-i18n="xp">XP progress</div>
-                <div class="progress">
-                  <div id="xpBar" class="progress-fill" style="width: 0%"></div>
-                </div>
+                <div class="progress"><div id="xpBar" class="progress-fill"></div></div>
                 <div class="muted" id="xpInfo">0 / 100</div>
               </div>
               <div class="stats">
@@ -76,11 +85,7 @@
           <div class="card">
             <h2 class="card-title i18n" data-i18n="leaderboard">Leaderboard</h2>
             <table class="table">
-              <thead>
-                <tr>
-                  <th>#</th><th class="i18n" data-i18n="name">Ism</th><th>XP</th>
-                </tr>
-              </thead>
+              <thead><tr><th>#</th><th class="i18n" data-i18n="name">Ism</th><th>XP</th></tr></thead>
               <tbody id="lbBody"></tbody>
             </table>
           </div>
@@ -148,9 +153,7 @@
             </select>
           </div>
           <table class="table">
-            <thead>
-              <tr><th>#</th><th class="i18n" data-i18n="name">Ism</th><th>XP</th><th>Plan</th></tr>
-            </thead>
+            <thead><tr><th>#</th><th class="i18n" data-i18n="name">Ism</th><th>XP</th><th>Plan</th></tr></thead>
             <tbody id="lbBody2"></tbody>
           </table>
         </div>
@@ -164,6 +167,7 @@
             <label class="field"><span>Email</span><input id="email" type="email" placeholder="you@example.com"/></label>
             <label class="field"><span>Telefon</span><input id="phone" type="tel" placeholder="+998 99 000 00 00"/></label>
             <label class="field"><span>Telegram</span><input id="tg" type="text" placeholder="@username"/></label>
+            <label class="field"><span>Parol</span><input id="password" type="password" placeholder="***"/></label>
             <div class="row-wrap">
               <button id="btnRegister" class="btn primary i18n" data-i18n="register">Ro‘yxatdan o‘tish</button>
               <button id="btnLogin" class="btn secondary i18n" data-i18n="login">Kirish</button>
@@ -187,22 +191,16 @@
             <div class="plan-card">
               <h3>Free</h3>
               <ul class="plan-list">
-                <li>3 chats/week</li>
-                <li>Basic feedback</li>
-                <li>Leaderboard</li>
+                <li>3 chats/week</li><li>Basic feedback</li><li>Leaderboard</li>
               </ul>
             </div>
             <div class="plan-card highlight">
               <h3>Premium</h3>
               <ul class="plan-list">
-                <li>Unlimited chats</li>
-                <li>IELTS pack</li>
-                <li>Deep analytics</li>
+                <li>Unlimited chats</li><li>IELTS pack</li><li>Deep analytics</li>
               </ul>
               <div class="price-grid">
-                <div>Oyiga: 69 000</div>
-                <div>3 oy: 199 000</div>
-                <div>Yillik: 699 000</div>
+                <div>Oyiga: 69 000</div><div>3 oy: 199 000</div><div>Yillik: 699 000</div>
               </div>
               <div class="row-wrap">
                 <button id="btnPayme" class="btn accent">Payme</button>
@@ -212,11 +210,7 @@
             </div>
             <div class="plan-card">
               <h3>Teachers</h3>
-              <ul class="plan-list">
-                <li>Class leaderboard</li>
-                <li>Assignments</li>
-                <li>Soon: Tutor booking</li>
-              </ul>
+              <ul class="plan-list"><li>Class leaderboard</li><li>Assignments</li><li>Soon: Tutor booking</li></ul>
             </div>
           </div>
         </div>
@@ -230,20 +224,13 @@
             <div class="card-sub">
               <h3>Users</h3>
               <input id="searchUser" class="input" placeholder="Search by email/telegram/phone"/>
-              <select id="filterPlan" class="input">
-                <option value="all">All</option>
-                <option value="FREE">FREE</option>
-                <option value="PREMIUM">PREMIUM</option>
-              </select>
+              <select id="filterPlan" class="input"><option value="all">All</option><option value="FREE">FREE</option><option value="PREMIUM">PREMIUM</option></select>
               <div id="adminUsers" class="list"></div>
             </div>
             <div class="card-sub">
               <h3>Topics</h3>
               <input id="searchTopic" class="input" placeholder="Search topic"/>
-              <select id="filterTop" class="input">
-                <option value="all">All</option>
-                <option value="popular">Popular</option>
-              </select>
+              <select id="filterTop" class="input"><option value="all">All</option><option value="popular">Popular</option></select>
               <div id="adminTopics" class="list"></div>
               <canvas id="adminChart" height="120"></canvas>
             </div>
@@ -256,7 +243,7 @@
   <footer class="footer">
     <div class="container row-between">
       <div>© SpeakMate — speakmate.vercel.app</div>
-      <div class="muted">Email: sarvinoz09@gmail.com | Phone: +998 99 272 09 84</div>
+      <div class="muted">Email: support@speakmate.vercel.app</div>
     </div>
   </footer>
 
