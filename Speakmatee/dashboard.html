@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">SpeakMate</div>
+</header>
+<header class="navbar">
+  <div class="nav-left">
+    <span class="logo">SpeakMate</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="premium.html">Premium</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+
+  <div class="nav-right">
+    <a href="#" class="nav-link">Sign up</a>
+    <button class="btn primary" onclick="goLogin()">Log in</button>
+  </div>
+</header>
+
+<div class="dashboard">
+  <div class="card">
+    <h3>Your Progress</h3>
+    <div class="progress-bar">
+      <div class="progress-fill" id="fill"></div>
+    </div>
+    <p><span id="done">2</span>/10 lessons</p>
+    <button class="btn accent" onclick="goChat()">Start Chat</button>
+  </div>
+
+  <div class="card">
+    <h3>Leaderboard</h3>
+    <p>You: <b id="score">20</b> pts</p>
+    <a href="premium.html">Upgrade to Premium</a>
+  </div>
+</div>
+
+<script src="js/dashboard.js"></script>
+</body>
+</html>

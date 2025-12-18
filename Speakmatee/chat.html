@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Chat – SpeakMate</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+  <div class="nav-left">
+    <span class="logo">SpeakMate</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="premium.html">Premium</a>
+      <a href="chat.html" class="active">Chat</a>
+    </nav>
+  </div>
+</header>
+
+<!-- CHAT CONTAINER -->
+<section class="chat-container">
+  <div class="chat-box" id="chatBox">
+    <div class="ai-msg">👋 Hello! I’m your AI speaking partner. Start chatting!</div>
+  </div>
+
+  <div class="chat-input">
+    <input type="text" id="userInput" placeholder="Type your message..." />
+    <button onclick="sendMessage()">Send</button>
+  </div>
+</section>
+
+<script src="js/chat.js"></script>
+</body>
+</html>

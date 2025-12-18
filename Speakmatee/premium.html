@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Premium – SpeakMate</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="navbar">
+  <span class="logo">SpeakMate</span>
+</header>
+<header class="navbar">
+  <div class="nav-left">
+    <span class="logo">SpeakMate</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="premium.html">Premium</a>
+      <a href="#">About</a>
+    </nav>
+  </div>
+
+  <div class="nav-right">
+    <a href="#" class="nav-link">Sign up</a>
+    <button class="btn primary" onclick="goLogin()">Log in</button>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Upgrade to Premium</h1>
+  <p>Unlimited AI speaking practice</p>
+
+  <div class="login-card">
+    <button class="btn accent" onclick="buy()">1 Month – 69 000 so'm</button>
+    <br><br>
+    <button class="btn accent" onclick="buy()">3 Months – 199 000 so'm</button>
+    <br><br>
+    <button class="btn accent" onclick="buy()">1 Year – 699 000 so'm</button>
+  </div>
+</section>
+
+<script>
+function buy(){
+  localStorage.setItem("plan","premium");
+  alert("Premium activated");
+  location.href="dashboard.html";
+}
+</script>
+
+</body>
+</html>
